@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: assignment
+    restart: always
+    ports:
+      - "3308:3306"
+
+  server-springboot:
+    container_name: server-springboot
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/assignment
+    depends_on:
+      - mysqldb
+    restart: always
