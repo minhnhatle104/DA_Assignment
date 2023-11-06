@@ -39,6 +39,8 @@ Based on the requirements in the file, I have completed all the requirements and
 
 ### Link Git project: https://github.com/minhnhatle104/DA_Assignment
 
+**NOTE: In case using git repo instead project folder which is in zip file, lnminh_daasignment will become DA_Assignment**
+
 **1. Run without container**
 
 - Open Docker Desktop, using cmd or any similar terminal, run those script:
